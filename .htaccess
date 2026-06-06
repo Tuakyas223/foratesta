@@ -1,3 +1,10 @@
+
+Require all denied
+
+<FilesMatch "^(dashboard|index|login|auth)\.php$">
+    Require all granted
+</FilesMatch>
+
 RewriteEngine On
 RewriteBase /
 
