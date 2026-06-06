@@ -12,12 +12,10 @@ class ScreenStream implements MessageComponentInterface {
 
     public function __construct() {
         $this->clients = new \SplObjectStorage;
-        echo "Сервер готов к работе...\n"; // Добавили
     }
 
     public function onOpen(ConnectionInterface $conn) {
         $this->clients->attach($conn);
-        echo "!!! Новое соединение: {$conn->resourceId}\n"; // Добавили
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
@@ -30,11 +28,9 @@ class ScreenStream implements MessageComponentInterface {
 
     public function onClose(ConnectionInterface $conn) {
         $this->clients->detach($conn);
-        echo "--- Отключение: {$conn->resourceId}\n"; // Добавили
     }
 
     public function onError(ConnectionInterface $conn, \Exception $e) {
-        echo "Ошибка: {$e->getMessage()}\n"; // Добавили
         $conn->close();
     }
 }
