@@ -1,6 +1,6 @@
 <?php
 session_start();
-$password_hash = '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8';
+$password_hash = '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9';
 $uri = trim($_SERVER['REQUEST_URI'], '/');
 
 if ($uri === 'gen') {
